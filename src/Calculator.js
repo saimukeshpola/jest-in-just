@@ -17,3 +17,5 @@ class Calculator {
     return a / b;
   }
 }
+
+export default Calculator;
