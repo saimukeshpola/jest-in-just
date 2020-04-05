@@ -1,8 +1,16 @@
 import Calculator from "../Calculator";
-var calc = new Calculator();
 
+let calc;
 describe("Calculator testing", () => {
-  test("Addition", () => {
+  beforeAll(() => {
+    calc = new Calculator();
+    console.log("Creating an instance of calculator");
+  });
+  beforeEach(() => {
+    console.log("Calculator test suite before test");
+  }, 5000);
+  test("Addition", (done) => {
+    setTimeout(() => done, 6000);
     expect(calc.add(1, 1)).toBe(2);
     expect(calc.add(10, 3)).not.toBe(1);
   });
